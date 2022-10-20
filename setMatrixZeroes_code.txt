@@ -1,0 +1,45 @@
+class Solution {
+public:
+    void setZeroes(vector<vector<int>>& a) {
+        int m=a.size();
+        int n=a[0].size();
+        //cout<<m<<n;
+        
+        for(int i=0;i<m;i++)
+        {
+            for(int j=0;j<n;j++)
+            {
+                if(a[i][j]==0)
+                {
+                    for(int k=0;k<m;k++)
+                    {if(a[k][j]!=0)
+                    a[k][j]=-111;
+                    }
+                    
+                    for(int l=0;l<n;l++)
+                    {if(a[i][l]!=0)
+                    a[i][l]=-111;
+                    }
+                }
+                
+            }
+        }
+        for(int i=0;i<m;i++)
+        {
+            for(int j=0;j<n;j++)
+            {
+                if(a[i][j]==-111)
+                    a[i][j]=0;
+            }
+        }
+        
+        for(int i=0;i<m;i++)
+        {
+            for(int j=0;j<n;j++)
+            {
+                cout<<a[i][j];
+            }
+            cout<<endl;
+        }
+    }
+};
